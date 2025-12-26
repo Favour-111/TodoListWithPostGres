@@ -474,21 +474,21 @@ function TaskList({
       </div>
       <div className="flex flex-wrap items-center justify-center gap-2 mt-4 w-full max-w-full">
         <button
-          className="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-xs font-medium disabled:opacity-50 cursor-pointer"
+          className="px-1 flex items-center py-1 gap-1 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-xs font-medium disabled:opacity-50 cursor-pointer"
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
         >
-          Prev
+          <GrFormPrevious /> Prev
         </button>
         <span className="text-xs text-zinc-500">
           Page {page} of {totalPages}
         </span>
         <button
-          className="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-xs font-medium disabled:opacity-50 cursor-pointer"
+          className="px-1 py-1 flex items-center gap-1 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 text-xs font-medium disabled:opacity-50 cursor-pointer"
           onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
           disabled={page === totalPages}
         >
-          Next
+          Next <GrFormNext />
         </button>
       </div>
     </section>
@@ -1240,7 +1240,7 @@ import { CiBoxList } from "react-icons/ci";
 import { MdOutlineChecklist } from "react-icons/md";
 import { HiOutlineTrash } from "react-icons/hi";
 import { TbSubtask } from "react-icons/tb";
-import { GrTask } from "react-icons/gr";
+import { GrFormNext, GrFormPrevious, GrTask } from "react-icons/gr";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Dashboard() {
@@ -1373,7 +1373,7 @@ export default function Dashboard() {
               transform: sidebarOpen ? "translateX(0)" : "translateX(-100%)",
             }}
           >
-            <Sidebar />
+            <Sidebar onClose={() => setSidebarOpen(false)} />
           </aside>
         </>
       )}
@@ -1613,7 +1613,7 @@ export default function Dashboard() {
                         type="date"
                         value={newTask.due}
                         onChange={handleNewTaskChange}
-                        className="w-full text-sm px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-white placeholder:text-xs placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-blue-400 cursor-pointer shadow-sm"
+                        className="w-[100%] text-sm px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-white placeholder:text-xs placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-blue-400 cursor-pointer shadow-sm"
                         aria-describedby="due-help"
                       />
                       <p id="due-help" className="text-xs text-zinc-400 mt-1">
