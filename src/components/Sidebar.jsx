@@ -101,7 +101,7 @@ export default function Sidebar({
 
   return (
     <>
-      <aside className="flex flex-col h-full sm:w-90 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl border-r border-zinc-200 dark:border-zinc-800  p-6 gap-4 transition-colors duration-300 md:static md:translate-x-0 md:shadow-none relative overflow-y-auto">
+      <aside className="flex flex-col h-full sm:w-90 w-80 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl border-r border-zinc-200 dark:border-zinc-800  p-6 gap-4 transition-colors duration-300 md:static md:translate-x-0 md:shadow-none relative overflow-y-auto">
         {/* Cancel/Close Button */}
         {showCancel && (
           <button
